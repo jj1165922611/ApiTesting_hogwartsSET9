@@ -7,12 +7,14 @@
 # @Description: 接口测试库requests测试
 import requests
 import logging
-import pytest
+import json
+
+
 class TestRequests(object):
-    logging.basicConfig(level=logging.INFO)
+    url = "https://testerhome.com/api/v3/topics.json?limit=2"
+
     def test_get(self):
-        # r=requests.get("https://testerhome.com/api/v3/topics.json?limit=2")
-        r=requests.get("https://www.baidu.com/")
+        r = requests.get(self.url)
         logging.info(r)
         logging.info(r.text)
-        logging.info(r.json())
+        logging.info(json.dumps(r.json(), indent=2))
