@@ -31,4 +31,8 @@ class TestRequests(object):
         # logging.info(r)
         # logging.info(r.text)
         logging.info(json.dumps(r.json(),indent=2))
-        assert r.json()["data"]["items"][0]["quote"]["symbol"] =="SH000001"
+        assert r.json()["data"]["items"][0]["quote"]["symbol"] == "SH000001"
+
+
+
+
